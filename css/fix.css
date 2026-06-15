@@ -1,7 +1,7 @@
-/* Emergency visibility fix */
+/* Emergency visibility fix — Editorial Terminal theme */
 html, body {
-    background: #F5EBFA !important;
-    color: #49225B !important;
+    background: #FDFAF5 !important;
+    color: #1A1612 !important;
     opacity: 1 !important;
     visibility: visible !important;
 }

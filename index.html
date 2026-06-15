@@ -3,41 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Soham Bamane - Full Stack Developer specializing in MERN Stack, JavaScript, React, Node.js, MongoDB. Building modern web applications with clean code and elegant solutions.">
-    <meta name="keywords" content="Full Stack Developer, MERN Stack, React, Node.js, MongoDB, Web Development, JavaScript, Portfolio, Responsive Design">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'">
+    <meta name="description" content="Soham Bamane — Software Developer & Full Stack Engineer specializing in MERN Stack, JavaScript, React, Node.js, MongoDB. Building modern web applications with clean code and elegant solutions.">
+    <meta name="keywords" content="Software Developer, Software Engineer, Full Stack Developer, MERN Stack, React Developer, Node.js Developer, Web Development, JavaScript, Portfolio, Pune">
     <meta name="author" content="Soham Bamane">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Soham Bamane | MERN Stack Developer">
-    <meta property="og:description" content="Full Stack Developer specializing in MERN Stack development. Creating seamless digital experiences with modern web technologies.">
-    <meta property="og:image" content="./assets/soham.jpeg">
-    <meta property="og:url" content="https://sohambamane.github.io">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FDFAF5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Soham Bamane">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Soham Bamane | Software Developer">
+    <meta property="og:description" content="Software Developer & Full Stack Engineer. MERN Stack, React, Node.js, MongoDB. Building scalable web applications.">
+    <meta property="og:image" content="./assets/soham.jpg">
     <meta property="og:type" content="website">
-    
-    <!-- Twitter Card Meta Tags -->
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Soham Bamane | MERN Stack Developer">
-    <meta name="twitter:description" content="Full Stack Developer specializing in MERN Stack development.">
+    <meta name="twitter:title" content="Soham Bamane | Software Developer">
+    <meta name="twitter:description" content="Software Developer & Full Stack Engineer. MERN Stack, React, Node.js, MongoDB.">
     <meta name="twitter:image" content="./assets/soham.jpg">
-    
-    <title>Soham Bamane | MERN Stack Developer</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="css/style.css">
+
+    <title>Soham Bamane — Software Developer & Full Stack Engineer</title>
+
+    <!-- Custom SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231A1612'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='700' fill='%23C4622D'>S</text></svg>">
+
+    <!-- Preload hero image for faster LCP -->
+    <link rel="preload" as="image" href="./assets/soham.jpg">
+
+    <!-- Critical CSS: prevents FOUC on load -->
+    <style>body{font-family:'Courier New',monospace;background:#FDFAF5;color:#1A1612;margin:0;overflow-x:hidden}[data-theme="dark"] body{background:#0E0C0A;color:#F0EBE3}</style>
+
+    <!-- Fonts: preconnect for faster connection -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Yatra+One&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/bcaa6ee4dd.js" crossorigin="anonymous"></script>
-    
-    <!-- Structured Data for SEO -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Soham Bamane",
-        "jobTitle": "Full Stack Developer",
-        "description": "MERN Stack Developer specializing in JavaScript, React, Node.js, and MongoDB",
+        "jobTitle": ["Software Developer", "Full Stack Developer", "MERN Stack Developer", "Software Engineer"],
+        "description": "Software Developer & Full Stack Engineer specializing in MERN Stack — React, Node.js, MongoDB, JavaScript.",
         "url": "https://sohambamane.github.io",
         "email": "soham.bamane.1129@gmail.com",
         "address": {
@@ -46,6 +62,7 @@
             "addressRegion": "Maharashtra",
             "addressCountry": "India"
         },
+        "knowsAbout": ["JavaScript", "React", "Node.js", "MongoDB", "MERN Stack", "Flutter", "Java", "MySQL"],
         "sameAs": [
             "https://github.com/SohamBamane",
             "https://www.linkedin.com/in/soham-bamane-1637602a0"
@@ -54,121 +71,279 @@
     </script>
 </head>
 <body>
+
+    <!-- Skip to main content for keyboard users -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+
+    <!-- 3D Scene (decorative background) -->
+    <div class="scene-3d" aria-hidden="true">
+        <div class="geo-cube geo-1">
+            <div class="cube-face cube-front"></div>
+            <div class="cube-face cube-back"></div>
+            <div class="cube-face cube-right"></div>
+            <div class="cube-face cube-left"></div>
+            <div class="cube-face cube-top"></div>
+            <div class="cube-face cube-bottom"></div>
+        </div>
+        <div class="geo-cube geo-2">
+            <div class="cube-face cube-front"></div>
+            <div class="cube-face cube-back"></div>
+            <div class="cube-face cube-right"></div>
+            <div class="cube-face cube-left"></div>
+            <div class="cube-face cube-top"></div>
+            <div class="cube-face cube-bottom"></div>
+        </div>
+        <div class="geo-ring geo-3">
+            <div class="ring-outer"></div>
+            <div class="ring-inner"></div>
+        </div>
+        <div class="geo-torus geo-4">
+            <div class="torus-section"></div>
+        </div>
+        <div class="geo-pyramid geo-5">
+            <div class="pyramid-face pyramid-face-1"></div>
+            <div class="pyramid-face pyramid-face-2"></div>
+            <div class="pyramid-face pyramid-face-3"></div>
+            <div class="pyramid-face pyramid-face-4"></div>
+        </div>
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+        <div class="particle p6"></div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-menu">
-                <span class="logo">सोहम बामणे</span>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#contact">Let's Talk</a></li>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo" aria-label="Soham Bamane home">
+                <span class="logo-bracket">{</span>Soham<span class="logo-bracket">}</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link"><span class="link-num">01</span> About</a></li>
+                <li><a href="#experience" class="nav-link"><span class="link-num">02</span> Experience</a></li>
+                <li><a href="#skills" class="nav-link"><span class="link-num">03</span> Skills</a></li>
+                <li><a href="#work" class="nav-link"><span class="link-num">04</span> Work</a></li>
+                <li><a href="#contact" class="nav-link"><span class="link-num">05</span> Contact</a></li>
                 <li>
-                    <a href="./assets/Soham-Bamane-Resume.pdf" download class="nav-resume-link">
-                        <i class="fas fa-download"></i> Resume
+                    <a href="./assets/Soham-Bamane-Resume.pdf" download class="nav-resume">
+                        <span class="link-num">↓</span> Resume
                     </a>
                 </li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <!-- Left Side - Text Content -->
-                <div class="hero-text">
-                    <div class="hero-greeting">
-                        <span class="greeting-text">Hello, I'm</span>
+        <div class="hero-inner">
+
+            <!-- Left Column: Text -->
+            <div class="hero-left">
+                <div class="hero-label">
+                    <span class="label-dot"></span>
+                    <span class="label-text">Available for work</span>
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="hero-title-line hero-title-line--1">Soham</span>
+                    <span class="hero-title-line hero-title-line--2">Bamane<span class="hero-period">.</span></span>
+                </h1>
+
+                <!-- Terminal Code Block -->
+                <div class="hero-terminal" aria-label="Animated terminal showing my role">
+                    <div class="terminal-bar">
+                        <span class="terminal-dot dot-red"></span>
+                        <span class="terminal-dot dot-yellow"></span>
+                        <span class="terminal-dot dot-green"></span>
+                        <span class="terminal-title">soham@portfolio ~ </span>
                     </div>
-                    <h1 class="hero-name">
-                        <span class="name-highlight">Soham</span> Bamane
-                    </h1>
-                    <div class="hero-roles">
-                        <span class="role-text">I'm a <span class="role-carousel">
-                            <span class="role active">MERN Stack Developer</span>
-                            <span class="role">Full Stack Developer</span>
-                            <span class="role">React Developer</span>
-                            <span class="role">Node.js Developer</span>
-                        </span></span>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="term-prompt">$</span>
+                            <span class="term-cmd"> whoami</span>
+                        </div>
+                        <div class="terminal-line term-output" id="termRole">Loading...</div>
+                        <div class="terminal-line">
+                            <span class="term-prompt">$</span>
+                            <span class="term-cmd"> cat skills.txt</span>
+                        </div>
+                        <div class="terminal-line term-output term-tags" id="termTags">
+                            <span class="t-tag">Java</span>
+                            <span class="t-tag">Python</span>
+                            <span class="t-tag">React.js</span>
+                            <span class="t-tag">Node.js</span>
+                            <span class="t-tag">MongoDB</span>
+                            <span class="t-tag">JavaScript</span>
+                            <span class="t-tag">Express.js</span>
+                            <span class="t-tag">Flutter</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="term-cursor" aria-hidden="true">▋</span>
+                        </div>
                     </div>
-                    <p class="hero-description">
-                        Passionate about creating seamless digital experiences with modern web technologies. 
-                        I specialize in building scalable applications using the MERN stack.
+                </div>
+
+                <p class="hero-bio">
+                    Software developer & full stack engineer from Pune crafting
+                    digital experiences with the MERN stack. Focused on clean
+                    architecture, scalable systems, and interfaces that feel alive.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#work" class="btn-primary">
+                        <span>View Projects</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="#contact" class="btn-ghost">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-val" data-target="1">0</span><span class="stat-suf">+</span>
+                        <span class="stat-key">Years<br>Exp</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-val" data-target="15">0</span><span class="stat-suf">+</span>
+                        <span class="stat-key">Projects<br>Shipped</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-val" data-target="100">0</span><span class="stat-suf">%</span>
+                        <span class="stat-key">Client<br>Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Photo -->
+            <div class="hero-right">
+                <div class="hero-image-frame" id="heroFrame">
+                    <div class="frame-glow"></div>
+                    <img src="./assets/soham.jpg" alt="Soham Bamane" class="hero-photo" loading="eager">
+                    <div class="hero-image-overlay"></div>
+                </div>
+
+                <div class="hero-image-tag">
+                    <span class="tag-text">MERN Stack</span>
+                    <span class="tag-text">React · Node · MongoDB</span>
+                </div>
+
+                <div class="hero-floating-badges">
+                    <div class="float-badge badge-loc">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Pune, India
+                    </div>
+                    <div class="float-badge badge-avail">
+                        <span class="avail-dot"></span>
+                        Open to work
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+            <span class="scroll-line"></span>
+            <span class="scroll-label">scroll</span>
+        </div>
+
+        <div class="hero-bg-deco" aria-hidden="true">
+            <div class="bg-line bg-line-1"></div>
+            <div class="bg-line bg-line-2"></div>
+            <div class="bg-code-block">&lt;code/&gt;</div>
+        </div>
+    </section>
+
+    <!-- Section Transition Line -->
+    <div class="section-transition" aria-hidden="true">
+        <div class="transition-line" id="transAbout"></div>
+    </div>
+
+    <!-- Main content landmark for accessibility -->
+    <main id="main" aria-label="Main content">
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="section-inner">
+            <div class="section-label">
+                <span class="section-num">01</span>
+                <span class="section-slash">/</span>
+                <span class="section-name">About</span>
+            </div>
+
+            <div class="about-layout">
+                <div class="about-left">
+                    <h2 class="about-heading" data-bg-num="01">
+                        Building the web,<br>
+                        <em>one commit</em> at a time.
+                    </h2>
+                    <p class="about-body">
+                        I'm a software developer and full stack engineer with a passion for turning complex problems into elegant, scalable solutions. My toolkit centers around the MERN stack — MongoDB, Express, React, and Node.js — though I'm always exploring what's next.
                     </p>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">1+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Client Satisfaction</span>
-                        </div>
-                    </div>
-                    <div class="hero-actions">
-                        <a href="#contact" class="btn-primary">
-                            <span>Let's Talk</span>
-                            <i class="fas fa-arrow-right"></i>
+                    <p class="about-body">
+                        I care deeply about the craft: readable code, thoughtful architecture, and interfaces that feel alive. Whether it's a REST API, a React dashboard, or a Flutter mobile app — I build things that actually scale and hold up under pressure.
+                    </p>
+
+                    <div class="about-actions">
+                        <a href="./assets/Soham-Bamane-Resume.pdf" download class="btn-primary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download CV
                         </a>
-                        <a href="#work" class="btn-secondary">
-                            <span>View My Work</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
+                        <a href="#contact" class="btn-ghost">Say Hello →</a>
                     </div>
                 </div>
 
-                <!-- Right Side - Visual Content -->
-                <div class="hero-visual">
-                    <div class="profile-container">
-                        <div class="profile-image-wrapper">
-                            <img src="./assets/soham.jpg" alt="Soham Bamane - Full Stack Developer" class="profile-image" loading="lazy">
-                            <div class="profile-glow"></div>
-                        </div>
-                        <div class="floating-elements">
-                            <div class="float-element tech-1">
-                                <i class="fab fa-react"></i>
-                            </div>
-                            <div class="float-element tech-2">
-                                <i class="fab fa-node"></i>
-                            </div>
-                            <div class="float-element tech-3">
-                                <i class="fab fa-js"></i>
-                            </div>
-                            <div class="float-element tech-4">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <div class="float-element tech-5">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <div class="float-element tech-6">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <div class="float-element tech-7">
-                                <i class="fab fa-git"></i>
-                            </div>
-                            <div class="float-element tech-8">
-                                <i class="fab fa-github"></i>
+                <!-- Testimonials -->
+                <div class="about-right">
+                    <div class="testimonials-label">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span>What people say</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <blockquote class="testimonial-quote">
+                            "Soham has an incredible ability to break down complex problems and deliver clean, working solutions. His attention to detail and genuine passion for the craft make him a pleasure to work with."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AK</div>
+                            <div class="author-info">
+                                <span class="author-name">Arjun Kulkarni</span>
+                                <span class="author-role">Fellow Developer, SPPU</span>
                             </div>
                         </div>
                     </div>
-                    <div class="hero-badges">
-                        <div class="badge available">
-                            <div class="badge-dot"></div>
-                            <span>Available for work</span>
-                        </div>
-                        <div class="badge location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Pune, Maharashtra, India</span>
+                    <div class="testimonial-card">
+                        <blockquote class="testimonial-quote">
+                            "A dedicated developer who genuinely cares about the quality of his work. He doesn't just ship features — he ships features done right."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PS</div>
+                            <div class="author-info">
+                                <span class="author-name">Priya Sharma</span>
+                                <span class="author-role">Project Collaborator</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -176,304 +351,630 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="lead">I'm a dynamic full stack developer from India, passionate about creating seamless digital experiences. With over 1+ year of expertise in MERN stack development, I specialize in bringing ideas to life through clean code and elegant solutions. From visually appealing user interfaces to robust back-end structures, I thrive on transforming complex problems into beautiful digital realities.</p>
-                    
-                    <div class="tech-stack">
-                        <h3>Tech Stack</h3>
-                        <div class="tech-grid">
-                            <div class="tech-item">
-                                <i class="fab fa-html5"></i>
-                                <span>HTML5</span>
+    <!-- Section Transition -->
+    <div class="section-transition" aria-hidden="true">
+        <div class="transition-line" id="transExperience"></div>
+    </div>
+
+    <!-- Experience / Timeline -->
+    <section class="experience" id="experience">
+        <div class="section-inner">
+            <div class="section-label">
+                <span class="section-num">02</span>
+                <span class="section-slash">/</span>
+                <span class="section-name">Experience</span>
+            </div>
+
+            <div class="exp-layout">
+                <div class="exp-header">
+                    <h2 class="exp-heading" data-bg-num="02">My<br><em>Journey</em></h2>
+                    <p class="exp-sub">A look at where I've been, what I've built, and where I'm headed next.</p>
+                </div>
+
+                <div class="timeline">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                            <div class="marker-line"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2023 — Present</span>
+                                <span class="timeline-type">Education</span>
                             </div>
-                            <div class="tech-item">
-                                <i class="fab fa-css3-alt"></i>
-                                <span>CSS3</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-js"></i>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-react"></i>
-                                <span>React</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-node"></i>
-                                <span>Node.js</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fas fa-database"></i>
-                                <span>MongoDB</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-flutter"></i>
-                                <span>Flutter</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-android"></i>
-                                <span>Android</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-java"></i>
-                                <span>Java</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fas fa-database"></i>
-                                <span>MySQL</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-git"></i>
-                                <span>Git</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                            <h3 class="timeline-title">Bachelor of Engineering — Computer Science</h3>
+                            <p class="timeline-org">Savitribai Phule Pune University (SPPU)</p>
+                            <p class="timeline-desc">
+                                Pursuing my BE with a focus on data structures, algorithms, web technologies, and software engineering principles. Actively building projects and exploring full stack development.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">C/C++</span>
+                                <span class="tag">Java</span>
+                                <span class="tag">DSA</span>
+                                <span class="tag">DBMS</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="cta-buttons">
-                        <a href="./assets/Soham-Bamane-Resume.pdf" class="btn btn-primary" download>
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                        <a href="#contact" class="btn btn-outline">
-                            <i class="fas fa-envelope"></i> Get in Touch
-                        </a>
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                            <div class="marker-line"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2024</span>
+                                <span class="timeline-type">Project</span>
+                            </div>
+                            <h3 class="timeline-title">Careerly — AI Career Roadmap Platform</h3>
+                            <p class="timeline-org">Personal Project</p>
+                            <p class="timeline-desc">
+                                Full stack app with Flutter frontend + Node.js backend. Integrated Claude, Gemini, and Llama AI models via OpenRouter to generate personalized learning paths. Built auth, progress tracking, YouTube resource curation, and a resume builder.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Flutter</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                                <span class="tag">JWT</span>
+                                <span class="tag">OpenRouter AI</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Projects Completed</div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                            <div class="marker-line"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2024</span>
+                                <span class="timeline-type">Project</span>
+                            </div>
+                            <h3 class="timeline-title">Konkan Voyage — Travel Booking Platform</h3>
+                            <p class="timeline-org">Personal Project</p>
+                            <p class="timeline-desc">
+                                Spring Boot + MySQL platform for Konkan coastal destinations. Features a full admin dashboard, user management, booking system, and automated Excel reporting for operations.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">Java</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Thymeleaf</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">1+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Client Satisfaction</div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item timeline-item--current">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Now &amp; Beyond</span>
+                                <span class="timeline-type timeline-type--active">Building</span>
+                            </div>
+                            <h3 class="timeline-title">Weather Dashboard &amp; More</h3>
+                            <p class="timeline-org">Personal Project — In Progress</p>
+                            <p class="timeline-desc">
+                                Currently building a React + TypeScript weather app with interactive charts, alerts, and location-based forecasts. Always exploring new technologies to expand the toolkit.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Chart.js</span>
+                                <span class="tag">Weather API</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Section -->
-    <section class="work-section" id="work">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Work</h2>
-                <p class="section-subtitle">Some of my recent projects that I'm proud of</p>
+    <!-- Section Transition -->
+    <div class="section-transition" aria-hidden="true">
+        <div class="transition-line" id="transSkills"></div>
+    </div>
+
+    <!-- Skills -->
+    <section class="skills" id="skills">
+        <div class="section-inner">
+            <div class="section-label">
+                <span class="section-num">03</span>
+                <span class="section-slash">/</span>
+                <span class="section-name">Skills</span>
             </div>
-            
-            <div class="portfolio-grid">
-                <article class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="./assets/careerly.png" alt="Careerly - AI Career Roadmap App" class="portfolio-img" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <a href="https://github.com/SohamBamane/Careerly" target="_blank" class="portfolio-btn">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Careerly</h3>
-                        <p class="portfolio-description">AI-powered career roadmap platform built with Flutter & Node.js. Generates personalized learning paths with skill assessments, YouTube resource curation, progress tracking, and a resume builder. Powered by Claude, Gemini, and Llama via OpenRouter.</p>
-                        <ul class="project-outcomes">
-                            <li>Delivered AI-based personalized roadmaps with multi-model support.</li>
-                            <li>Improved learner flow by combining assessment, resources, and resume tools in one app.</li>
-                        </ul>
-                        <div class="portfolio-tags">
-                            <span>Flutter</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>JWT</span>
-                        </div>
-                    </div>
-                </article>
 
-                <article class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="./assets/konkan-voyage.png" alt="Konkan Voyage - Travel Booking Platform" class="portfolio-img" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <a href="https://github.com/SohamBamane/Konkan_Voyage" target="_blank" class="portfolio-btn">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Konkan Voyage</h3>
-                        <p class="portfolio-description">A comprehensive travel booking platform for Konkan coastal destinations featuring admin dashboard, user management, and automated Excel reporting system.</p>
-                        <ul class="project-outcomes">
-                            <li>Centralized booking and admin operations into a single dashboard.</li>
-                            <li>Reduced manual reporting effort through automated Excel exports.</li>
-                        </ul>
-                        <div class="portfolio-tags">
-                            <span>Spring Boot</span>
-                            <span>Java</span>
-                            <span>MySQL</span>
-                            <span>Thymeleaf</span>
-                        </div>
-                    </div>
-                </article>
+            <div class="skills-layout">
+                <div class="skills-header">
+                    <h2 class="skills-heading" data-bg-num="03">My<br><em>Toolkit</em></h2>
+                    <p class="skills-sub">Technologies I work with daily, rated by actual usage in production projects.</p>
+                </div>
 
-                <article class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="./assets/falling-star-game.png" alt="Falling Star Game - HTML5 Canvas Game" class="portfolio-img" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <a href="https://github.com/SohamBamane/Falling-Star-Game" target="_blank" class="portfolio-btn">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                                <a href="https://sohambamane.github.io/Falling-Star-Game/" target="_blank" class="portfolio-btn portfolio-btn-primary">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Live Demo
-                                </a>
+                <div class="skills-grid">
+                    <!-- Frontend -->
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            Frontend
+                        </h3>
+                        <div class="skill-list">
+                            <div class="skill-item" data-skill="JavaScript">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-pct">90%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div>
+                            </div>
+                            <div class="skill-item" data-skill="React">
+                                <div class="skill-info">
+                                    <span class="skill-name">React</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 85%"></div></div>
+                            </div>
+                            <div class="skill-item" data-skill="HTML5">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5 &amp; CSS3</span>
+                                    <span class="skill-pct">92%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 92%"></div></div>
+                            </div>
+                            <div class="skill-item" data-skill="TypeScript">
+                                <div class="skill-info">
+                                    <span class="skill-name">TypeScript</span>
+                                    <span class="skill-pct">70%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 70%"></div></div>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Falling Star Game</h3>
-                        <p class="portfolio-description">An engaging browser-based game built with HTML5 Canvas featuring collision detection, sound effects, progressive difficulty, and responsive mobile controls.</p>
-                        <ul class="project-outcomes">
-                            <li>Built responsive controls for a smooth mobile and desktop gameplay experience.</li>
-                            <li>Increased replay value with progressive difficulty and real-time collision logic.</li>
-                        </ul>
-                        <div class="portfolio-tags">
-                            <span>JavaScript</span>
-                            <span>HTML5 Canvas</span>
-                            <span>CSS3</span>
-                        </div>
-                    </div>
-                </article>
 
-                <article class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="./assets/weather-dashboard.png" alt="Weather Dashboard - React App" class="portfolio-img" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <span class="portfolio-btn" style="background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.3);cursor:default;">
-                                    <i class="fas fa-code-branch"></i>
-                                    In Development
-                                </span>
+                    <!-- Backend -->
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            Backend
+                        </h3>
+                        <div class="skill-list">
+                            <div class="skill-item" data-skill="Node.js">
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js</span>
+                                    <span class="skill-pct">88%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div>
+                            </div>
+                            <div class="skill-item" data-skill="MongoDB">
+                                <div class="skill-info">
+                                    <span class="skill-name">MongoDB</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 85%"></div></div>
+                            </div>
+                            <div class="skill-item" data-skill="MySQL">
+                                <div class="skill-info">
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-pct">75%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 75%"></div></div>
+                            </div>
+                            <div class="skill-item" data-skill="Java">
+                                <div class="skill-info">
+                                    <span class="skill-name">Java / Spring Boot</span>
+                                    <span class="skill-pct">72%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 72%"></div></div>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Weather Dashboard</h3>
-                        <p class="portfolio-description">A responsive weather application with location-based forecasts, interactive charts, weather alerts, and beautiful UI animations powered by modern APIs.</p>
-                        <ul class="project-outcomes">
-                            <li>Combined location forecasts, alerts, and trend charts in one clean interface.</li>
-                            <li>Improved usability with a responsive layout and quick visual weather insights.</li>
-                        </ul>
-                        <div class="portfolio-tags">
-                            <span>React</span>
-                            <span>TypeScript</span>
-                            <span>Weather API</span>
-                            <span>Chart.js</span>
+
+                    <!-- Mobile & Other -->
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                            Mobile &amp; Other
+                        </h3>
+                        <div class="skill-list">
+                            <div class="skill-item" data-skill="Flutter">
+                                <div class="skill-info">
+                                    <span class="skill-name">Flutter</span>
+                                    <span class="skill-pct">78%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 78%"></div></div>
+                            </div>
+                            <div class="skill-item" data-skill="Android">
+                                <div class="skill-info">
+                                    <span class="skill-name">Android Dev</span>
+                                    <span class="skill-pct">65%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 65%"></div></div>
+                            </div>
+                            <div class="skill-item" data-skill="Git">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git &amp; GitHub</span>
+                                    <span class="skill-pct">88%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div>
+                            </div>
+                            <div class="skill-item" data-skill="Python">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-pct">60%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="--fill: 60%"></div></div>
+                            </div>
                         </div>
                     </div>
-                </article>
+                </div>
+
+                <!-- Tech Section from About (repurposed) -->
+                <div class="tech-section" id="techSection">
+                    <div class="tech-3d-scene">
+                        <div class="scene-pyramid">
+                            <div class="spyramid-face spyramid-face-1"></div>
+                            <div class="spyramid-face spyramid-face-2"></div>
+                            <div class="spyramid-face spyramid-face-3"></div>
+                            <div class="spyramid-face spyramid-face-4"></div>
+                        </div>
+                        <div class="scene-orbit-ring"></div>
+                        <div class="scene-code-text">
+                            <span class="code-kw">const</span> <span class="code-var">skills</span> <span class="code-op">=</span>
+                        </div>
+                    </div>
+                    <h3 class="tech-heading">
+                        <span class="tech-heading-prefix">const</span> stack
+                        <span class="tech-heading-eq">=</span>
+                        <span class="tech-heading-val">[</span>
+                    </h3>
+                    <div class="tech-grid">
+                        <div class="tech-card" data-tech="html"><span class="tech-icon">🌐</span><span class="tech-name">HTML5</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="css"><span class="tech-icon">🎨</span><span class="tech-name">CSS3</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="js"><span class="tech-icon">⚡</span><span class="tech-name">JavaScript</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="react"><span class="tech-icon">⚛️</span><span class="tech-name">React</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="node"><span class="tech-icon">🟢</span><span class="tech-name">Node.js</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="mongo"><span class="tech-icon">🍃</span><span class="tech-name">MongoDB</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="flutter"><span class="tech-icon">🦋</span><span class="tech-name">Flutter</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="java"><span class="tech-icon">☕</span><span class="tech-name">Java</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="mysql"><span class="tech-icon">🗃️</span><span class="tech-name">MySQL</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="git"><span class="tech-icon">🔀</span><span class="tech-name">Git</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="android"><span class="tech-icon">📱</span><span class="tech-name">Android</span><span class="tech-level"></span></div>
+                        <div class="tech-card" data-tech="python"><span class="tech-icon">🐍</span><span class="tech-name">Python</span><span class="tech-level"></span></div>
+                    </div>
+                    <span class="tech-heading-close">];</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="section-title">Let's Work Together</h2>
-                    <p class="lead">Have a project in mind? Let's discuss how I can help bring your ideas to life.</p>
-                    
-                    <div class="contact-methods">
-                        <a href="mailto:soham.bamane.1129@gmail.com" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <span>soham.bamane.1129@gmail.com</span>
-                        </a>
-                        
-                        <div class="contact-method">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Pune, Maharashtra, India</span>
-                        </div>
-                    </div>
+    <!-- Section Transition -->
+    <div class="section-transition" aria-hidden="true">
+        <div class="transition-line" id="transWork"></div>
+    </div>
 
-                    <div class="social-links-footer">
-                        <a href="https://github.com/SohamBamane" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/soham-bamane-1637602a0" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/soham_bamane_29" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://bit.ly/sohambamane" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
+    <!-- Work -->
+    <section class="work" id="work">
+        <div class="section-inner">
+            <div class="section-label">
+                <span class="section-num">04</span>
+                <span class="section-slash">/</span>
+                <span class="section-name">Work</span>
+            </div>
 
-                <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/mnjnwljd" method="POST" novalidate>
-                        <div class="form-group">
-                            <label for="name" class="sr-only">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required aria-describedby="name-error">
-                            <div class="error-message" id="name-error"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="sr-only">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required aria-describedby="email-error">
-                            <div class="error-message" id="email-error"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" class="sr-only">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Subject" aria-describedby="subject-error">
-                            <div class="error-message" id="subject-error"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="sr-only">Message</label>
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required aria-describedby="message-error"></textarea>
-                            <div class="error-message" id="message-error"></div>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submitBtn" aria-describedby="form-status">
-                            <i class="fas fa-paper-plane"></i> 
-                            <span class="btn-text">Send Message</span>
-                            <span class="btn-loading" style="display: none;">
-                                <i class="fas fa-spinner fa-spin"></i> Sending...
-                            </span>
+            <div class="work-header">
+                <h2 class="work-heading" data-bg-num="04">
+                    Featured <em>Projects</em>
+                </h2>
+                <p class="work-sub">A selection of things I've built that I'm genuinely proud of.</p>
+            </div>
+
+            <div class="project-list">
+
+                <!-- Project 1 -->
+                <article class="project-card" data-project="careerly">
+                    <div class="project-visual">
+                        <img src="./assets/careerly.png" alt="Careerly App" class="project-img" loading="lazy">
+                        <div class="project-visual-overlay"></div>
+                        <button class="project-expand-btn" data-project="careerly" aria-label="View details">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
                         </button>
-                        <div id="formStatus" class="form-status" role="alert" aria-live="polite"></div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="project-num">01</span>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <h3 class="project-title">Careerly</h3>
+                        <p class="project-desc">
+                            AI-powered career roadmap platform built with Flutter & Node.js. Generates personalized learning paths with skill assessments, YouTube resource curation, progress tracking, and a resume builder. Powered by Claude, Gemini, and Llama via OpenRouter.
+                        </p>
+                        <ul class="project-outcomes">
+                            <li>Delivered AI-based personalized roadmaps with multi-model support</li>
+                            <li>Improved learner flow by combining assessment, resources, and resume tools in one app</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">JWT</span>
+                            <span class="tag">OpenRouter AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SohamBamane/Careerly" target="_blank" rel="noopener" class="project-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <span>Source</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card" data-project="konkan">
+                    <div class="project-visual">
+                        <img src="./assets/konkan-voyage.png" alt="Konkan Voyage App" class="project-img" loading="lazy">
+                        <div class="project-visual-overlay"></div>
+                        <button class="project-expand-btn" data-project="konkan" aria-label="View details">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                        </button>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="project-num">02</span>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <h3 class="project-title">Konkan Voyage</h3>
+                        <p class="project-desc">
+                            A comprehensive travel booking platform for Konkan coastal destinations featuring an admin dashboard, user management, and automated Excel reporting system.
+                        </p>
+                        <ul class="project-outcomes">
+                            <li>Centralized booking and admin operations into a single dashboard</li>
+                            <li>Reduced manual reporting effort through automated Excel exports</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Thymeleaf</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SohamBamane/Konkan_Voyage" target="_blank" rel="noopener" class="project-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <span>Source</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card" data-project="falling">
+                    <div class="project-visual">
+                        <img src="./assets/falling-star-game.png" alt="Falling Star Game" class="project-img" loading="lazy">
+                        <div class="project-visual-overlay"></div>
+                        <button class="project-expand-btn" data-project="falling" aria-label="View details">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                        </button>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="project-num">03</span>
+                            <span class="project-year">2023</span>
+                        </div>
+                        <h3 class="project-title">Falling Star Game</h3>
+                        <p class="project-desc">
+                            An engaging browser-based game built with HTML5 Canvas featuring collision detection, sound effects, progressive difficulty, and responsive mobile controls.
+                        </p>
+                        <ul class="project-outcomes">
+                            <li>Built responsive controls for smooth mobile and desktop gameplay</li>
+                            <li>Increased replay value with progressive difficulty and real-time collision logic</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML5 Canvas</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SohamBamane/Falling-Star-Game" target="_blank" rel="noopener" class="project-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <span>Source</span>
+                            </a>
+                            <a href="https://sohambamane.github.io/Falling-Star-Game/" target="_blank" rel="noopener" class="project-link project-link--live">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card project-card--wip" data-project="weather">
+                    <div class="project-visual">
+                        <img src="./assets/weather-dashboard.png" alt="Weather Dashboard" class="project-img" loading="lazy">
+                        <div class="project-visual-overlay"></div>
+                        <div class="project-wip-badge">In Progress</div>
+                        <button class="project-expand-btn" data-project="weather" aria-label="View details">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                        </button>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="project-num">04</span>
+                            <span class="project-year">WIP</span>
+                        </div>
+                        <h3 class="project-title">Weather Dashboard</h3>
+                        <p class="project-desc">
+                            A responsive weather application with location-based forecasts, interactive charts, weather alerts, and beautiful UI animations powered by modern APIs.
+                        </p>
+                        <ul class="project-outcomes">
+                            <li>Combined location forecasts, alerts, and trend charts in one clean interface</li>
+                            <li>Improved usability with a responsive layout and quick visual weather insights</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Chart.js</span>
+                            <span class="tag">Weather API</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Transition -->
+    <div class="section-transition" aria-hidden="true">
+        <div class="transition-line" id="transContact"></div>
+    </div>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="section-inner">
+            <div class="section-label">
+                <span class="section-num">05</span>
+                <span class="section-slash">/</span>
+                <span class="section-name">Contact</span>
+            </div>
+
+            <div class="contact-layout">
+                <div class="contact-left">
+                    <h2 class="contact-heading" data-bg-num="05">
+                        Let's build<br>
+                        something <em>great</em>.
+                    </h2>
+                    <p class="contact-sub">
+                        Have a project in mind, a question, or just want to say hi?
+                        My inbox is always open.
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:soham.bamane.1129@gmail.com" class="contact-link" id="emailLink">
+                            <span class="contact-link-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </span>
+                            <span class="contact-link-content">
+                                <span class="contact-link-label">Email</span>
+                                <span class="contact-link-val" id="emailText">soham.bamane.1129@gmail.com</span>
+                            </span>
+                            <button class="copy-btn" id="copyEmail" aria-label="Copy email" title="Copy to clipboard">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                <svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </button>
+                            <svg class="contact-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+
+                        <a href="https://github.com/SohamBamane" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-link-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </span>
+                            <span class="contact-link-content">
+                                <span class="contact-link-label">GitHub</span>
+                                <span class="contact-link-val">@SohamBamane</span>
+                            </span>
+                            <svg class="contact-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/soham-bamane-1637602a0" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-link-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </span>
+                            <span class="contact-link-content">
+                                <span class="contact-link-label">LinkedIn</span>
+                                <span class="contact-link-val">soham-bamane</span>
+                            </span>
+                            <svg class="contact-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+
+                        <a href="https://bit.ly/sohambamane" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-link-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </span>
+                            <span class="contact-link-content">
+                                <span class="contact-link-label">WhatsApp</span>
+                                <span class="contact-link-val">Let's Chat</span>
+                            </span>
+                            <svg class="contact-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mnjnwljd" method="POST" novalidate>
+                        <div class="form-header">
+                            <h3 class="form-title">Send a message</h3>
+                            <p class="form-sub">I typically respond within 24 hours.</p>
+                        </div>
+                        <div class="form-field">
+                            <label for="cf-name" class="form-label">Name</label>
+                            <input type="text" id="cf-name" name="name" placeholder="Your name" class="form-input" required autocomplete="name">
+                        </div>
+                        <div class="form-field">
+                            <label for="cf-email" class="form-label">Email</label>
+                            <input type="email" id="cf-email" name="email" placeholder="your@email.com" class="form-input" required autocomplete="email">
+                        </div>
+                        <div class="form-field">
+                            <label for="cf-subject" class="form-label">Subject <span class="form-optional">(optional)</span></label>
+                            <input type="text" id="cf-subject" name="subject" placeholder="What's this about?" class="form-input" autocomplete="off">
+                        </div>
+                        <div class="form-field">
+                            <label for="cf-message" class="form-label">Message</label>
+                            <textarea id="cf-message" name="message" placeholder="Tell me about your project..." class="form-input form-textarea" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit" id="formSubmit">
+                            <span class="submit-text">Send Message</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            <span class="submit-loading">Sending<span class="loading-dots"></span></span>
+                        </button>
+                        <div class="form-status" id="formStatus" role="alert" aria-live="polite"></div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+</main><!-- /#main -->
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Soham Bamane. All rights reserved.</p>
-            <p>Designed & Built with <i class="fas fa-heart"></i> by Soham Bamane</p>
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="footer-logo"><span class="logo-bracket">{</span>Soham<span class="logo-bracket">}</span></span>
+                <p class="footer-tagline">Software Developer & Engineer · Pune, India</p>
+            </div>
+            <div class="footer-right">
+                <p class="footer-copy">© 2026 Soham Bamane. Crafted with care.</p>
+            </div>
         </div>
     </footer>
 
-    <div class="mobile-cta-bar" aria-label="Quick actions">
-        <a href="./assets/Soham-Bamane-Resume.pdf" download class="mobile-cta-btn mobile-cta-btn-outline">
-            <i class="fas fa-download"></i>
+    <!-- Mobile CTA -->
+    <div class="mobile-cta" aria-label="Quick actions">
+        <a href="./assets/Soham-Bamane-Resume.pdf" download class="mobile-cta-btn mobile-cta-btn--outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span>Resume</span>
         </a>
-        <a href="#contact" class="mobile-cta-btn mobile-cta-btn-solid">
-            <i class="fas fa-paper-plane"></i>
-            <span>Let's Talk</span>
+        <a href="#contact" class="mobile-cta-btn mobile-cta-btn--solid">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Say Hello</span>
         </a>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="polite">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span id="toastMsg">Copied to clipboard!</span>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
     </div>
 
     <script src="js/script.js"></script>
